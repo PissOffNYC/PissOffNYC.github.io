@@ -74,6 +74,7 @@
       #images .thumbnail.B img {
         border: 2px #00ff00 solid;
       }
+
     </style>
   </head>
   <body>
