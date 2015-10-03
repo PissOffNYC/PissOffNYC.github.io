@@ -15,28 +15,32 @@
         margin: 0;
         color: yellow;
       }
-      #shows {
+      #top-banner {
         text-align: center;
-        background-color: yellow;
-        color: black;
         margin: 0;
         padding: 0.5em;
       }
-      #shows span {
+      #text-info {
+        margin: 1em;
+        padding: 1em;
+      }
+      #upcoming-shows ul {
+        margin-top: 0.1em;
+        margin-bottom: 0;
+      }
+      .yellow-text {
+        background-color: yellow;
+        color: black;
+      }
+      .yellow-text span {
         margin: 2em;
       }
-      #shows a {
+      .yellow-text a {
         color: black;
         text-decoration: none;
       }
-      #shows a:hover {
+      .yellow-text a:hover {
         text-decoration: underline;
-      }
-      #text-details {
-        background-color: yellow;
-        color: black;
-        margin: 0;
-        padding: 0.5em;
       }
       .video-container {
         position: relative;
@@ -51,32 +55,46 @@
         width: 100%;
         height: 100%;
       }
+
+      /* mobile or narrow screens */
+      @media (max-width: 599px) {
+        #soundcloud-tracks iframe {
+          width: 100%;
+        }
+      }
+      /* larger screens */
+      @media (min-width: 600px) {
+        #soundcloud-tracks iframe {
+          width: 50%;
+        }
+      }
     </style>
   </head>
   <body>
     <h1>PISS-OFF!</h1>
-    <p id="shows">
-      <span>Next show: <a href="https://www.facebook.com/events/903530323056668/">10/24 at Tarot Society</a></span>
-      <span>Hear us at <a href="http://soundcloud.com/pissofffool">soundcloud.com/pissofffool</a></span>
+    <p id="top-banner" class="yellow-text">
+      <span><a href="https://www.facebook.com/events/903530323056668/">Next show: 10/24 at Tarot Society</a></span>
+      <span><a href="http://soundcloud.com/pissofffool">Hear us at soundcloud.com/pissofffool</a></span>
     </p>
 
     <div class="video-container">
       <iframe src="http://www.youtube.com/embed/_EwrmOdNW3c" frameborder="0" allowfullscreen class="video"></iframe>
     </div>
     
-    <div id="text-details">
-      We are PISS-OFF! and we never stop.
-      <br>Upcoming shows!
-      <ul>
-        <li><a href="https://www.facebook.com/events/903530323056668/">10/24 at Tarot Society, w/ Barbara Bitch, Borts Minorts, and The Simple Pleasure</a></li>
-        <li><a href="https://www.facebook.com/events/960643193979551/">12/4 at Palisades, w/ Gold Banquet, Decrepit Jaw, Takt & Peaceful Deli</a></li>
-      </ul>
+    <div id="text-info" class="yellow-text">
+      <div id="upcoming-shows">
+        Upcoming shows!
+        <ul>
+          <li><a href="https://www.facebook.com/events/903530323056668/">10/24 at Tarot Society, w/ Barbara Bitch, Borts Minorts, and The Simple Pleasure</a></li>
+          <li><a href="https://www.facebook.com/events/960643193979551/">12/4 at Palisades, w/ Gold Banquet, Decrepit Jaw, Takt & Peaceful Deli</a></li>
+        </ul>
+      </div>
     </div>
     
     <div id="soundcloud-tracks">
-      <iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61903964&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/58750484&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-      <iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61903443&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/59154093&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-      <iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/59154374&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe width="50%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61902921&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      <iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61903964&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/58750484&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      <iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61903443&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/59154093&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      <iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/59154374&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe><iframe height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61902921&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
     </div>
   </body>
 </html>
