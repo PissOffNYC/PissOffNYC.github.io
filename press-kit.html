@@ -84,21 +84,66 @@
         height: 125px;
         width: 100%;
       }
-      #images {
-        width: 100%;
-      }
       #album-art {
         width: 350px;
         height: 350px;
         margin-bottom: 10px;
       }
+
+      /* image map styles */
+      #images {
+        width: 100%;
+      }
+      #images .wrapper {
+        width: 600px;
+        height: 450px;
+        display: inline-block;
+        vertical-align: top;
+      }
+      #images .imgdiv {
+        display: inline-block;
+      }
+      #images .big {
+        width: 100%;
+        height: 75%;
+      }
+      #images .small {
+        width: 33.33333333333333%;
+        height: 25%;
+      }
+      #images .imgdiv img {
+        width: 100%;
+        height: 100%;
+      }
+      #images .left .small.pink {
+        border-top: 5px #FF02E6 solid;
+      }
+      #images .right .small.pink {
+        border-bottom: 5px #FF02E6 solid;
+      }
+      #images .left .small.yellow {
+        border-top: 5px yellow solid;
+      }
+      #images .right .small.yellow {
+        border-bottom: 5px yellow solid;
+      }
+      #images .left .small.green {
+        border-top: 5px #00ff00 solid;
+      }
+      #images .right .small.green {
+        border-bottom: 5px #00ff00 solid;
+      }
+      #images img:hover {
+        border: 5px #00ff00 solid;
+      }
+      /* end of image map styles */
     </style>
   </head>
   <body>
     <div id='wrapper'>
 
     <h1>PISS-OFF!</h1>
-    
+
     <div id="left-column" class="yellow-text">
 <p>We are <strong>PISS-OFF!</strong> and we want to wet your pants and blow your mind.  We are noisy, jumping, dancing, screaming, bouncing, hip-hop, punk, electronic, hardcore.  We are the anti-band who often gets described in synomyms for loud.  We rock rap shows and turn avante-garde dance performances into dirty raves.</p>
 
@@ -121,7 +166,7 @@
       <div class="video-container">
         <iframe src="http://www.youtube.com/embed/_EwrmOdNW3c" frameborder="0" allowfullscreen class="video"></iframe>
       </div>
-      
+
       <div class='yellow-text banner'>Preview tracks</div>
       <div id="soundcloud-tracks">
         <iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/61903964&amp;auto_play=false&amp;hide_related=true&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
@@ -133,8 +178,13 @@
       </div>
     </div><!-- end of right-column -->
 
+    <p class="yellow-text banner" style="margin-bottom:0">PISS-OFF! in action, click to enlarge</p>
     <div id="images">
-      <img src="piss-off-collage-1200.png">
+      <div class="wrapper left">
+        <div class="imgdiv big"><a href="images/inverted.png"><img src="images/inverted.png"></a></div><div class="imgdiv small pink"><a href="images/neon-green.png"><img src="images/neon-green.png"></a></div><div class="imgdiv small yellow"><a href="images/yelling-at-each-other.png"><img src="images/yelling-at-each-other.png"></a></div><div class="imgdiv small green"><a href="images/d-hat-inverted.png"><img src="images/d-hat-inverted.png"></a></div>
+      </div><div class="wrapper right">
+        <div class="imgdiv small pink"><a href="images/blue-background.png"><img src="images/blue-background.png"></a></div><div class="imgdiv small yellow"><a href="images/anika-yellow.png"><img src="images/anika-yellow.png"></a></div><div class="imgdiv small green"><a href="images/turtle.png"><img src="images/turtle.png"></a></div><div class="imgdiv big"><a href="images/waterfall.png"><img src="images/waterfall.png"></a></div>
+      </div>
     </div>
 
   </div>  <!-- end of wrapper -->
