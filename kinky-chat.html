@@ -1,0 +1,81 @@
+<html>
+<head>
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: "Lucida Console";
+    }
+    .wrapper {
+      display: inline-block;
+      vertical-align: top;
+      height: 75%;
+      padding: 1em;
+      border: 1px #00ff00 solid;
+    }
+    #userWrapper {
+      width: 20%;
+    }
+    #messageWrapper {
+      width: 60%;
+    }
+    .offline {
+      color: #aaa;
+    }
+    #messages {
+      border: 1px red solid;
+      height: 70%;
+      margin-bottom: 1em;
+      overflow: scroll;
+    }
+    h2 {
+      color: red;
+    }
+    input {
+      background-color: #00ff00;
+      font-family: "Lucida Console";
+      height: 30px;
+    }
+    button {
+      background-color: #00ff00;
+      font-family: "Lucida Console";
+      height: 30px;
+    }
+    .message .userName {
+      text-decoration: underline;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id='loginScreen'>
+  <h2>Login to Kinky Chat:</h2>
+  <input id='nameInput' type='text' />
+  <button id='loginButton'>Drip Drip</button>
+</div>
+
+
+
+<div id='chatScreen'>
+  <div id='userWrapper' class='wrapper'>
+    <h2>Users</h2>
+    <div id='userList'></div>
+  </div>
+  <div id='messageWrapper' class='wrapper'>
+    <h2>Messages</h2>
+    <div id='messages'></div>
+    <div id='chatInputRow'>
+      <input id='messageInput' type='text' />
+      <button id='messageSendButton'>Send</button>
+    </div>
+  </div>
+</div>
+
+<script src='kinky-chat.js'></script>
+
+</body>
+</html>
