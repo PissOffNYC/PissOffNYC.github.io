@@ -1,17 +1,13 @@
 var Chat = (function () {
+    // private myName_;
     function Chat() {
-        var _this = this;
         this.BASE_URL_ = 'https://po-chat.firebaseio.com/';
-        this.send = function (message) {
-            var messageObj = { userName: _this.myName_, message: message };
-            _this.chatFirebase_.push(messageObj);
-        };
         this.chatFirebase_ = new Firebase(this.BASE_URL_ + 'chat');
         this.usersFirebase_ = new Firebase(this.BASE_URL_ + 'users');
     }
-    Chat.prototype.connect = function (myName) {
+    Chat.prototype.connect = function () {
         var _this = this;
-        this.myName_ = myName;
+        // this.myName_ = myName;
         this.usersFirebase_.on('value', function (snapshot) {
             var onlineUsers = [];
             var offlineUsers = [];
@@ -38,10 +34,14 @@ var Chat = (function () {
                 _this.onMessageCallback_(messages);
             }
         });
-        var myRef = this.usersFirebase_.child(myName);
-        myRef.set(true);
-        myRef.onDisconnect().set(false);
+        // var myRef = this.usersFirebase_.child(myName);
+        // myRef.set(true);
+        // myRef.onDisconnect().set(false);
     };
+    // public send = (message :string) => {
+    //   var messageObj = {userName: this.myName_, message: message};
+    //   this.chatFirebase_.push(messageObj);
+    // }
     Chat.prototype.onUsers = function (func) {
         this.onUsersCallback_ = func;
     };
@@ -51,17 +51,17 @@ var Chat = (function () {
     return Chat;
 }());
 var mapUserToStatus = {};
-var myName;
-$('#chatScreen').hide();
-$('#loginButton').click(function () {
-    myName = $('#nameInput').val();
-    $('#loginScreen').hide();
-    $('#chatScreen').show();
-    login();
-});
+// var myName;
+// $('#chatScreen').hide();
+// $('#loginButton').click(() => {
+//   myName = $('#nameInput').val();
+//   $('#loginScreen').hide();
+//   $('#chatScreen').show();
+//   login();
+// });
 var chat = new Chat();
 var login = function () {
-    chat.connect(myName);
+    chat.connect();
     chat.onUsers(function (onlineUsers, offlineUsers) {
         var userList = $('#userList');
         userList.empty();
@@ -86,8 +86,9 @@ var login = function () {
         messagesDiv.scrollTop(messagesDiv[0].scrollHeight); // scroll to bottom
     });
 };
-$('#messageSendButton').click(function () {
-    var message = $('#messageInput').val();
-    chat.send(message);
-    $('#messageInput').val(''); // clear input
-});
+login();
+// $('#messageSendButton').click(() => {
+//   var message = $('#messageInput').val();
+//   chat.send(message);
+//   $('#messageInput').val('');  // clear input
+// });

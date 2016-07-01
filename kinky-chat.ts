@@ -7,15 +7,15 @@ class Chat {
   private usersFirebase_ :any;
   private onUsersCallback_ :Function;
   private onMessageCallback_ :Function;
-  private myName_;
+  // private myName_;
 
   constructor() {
     this.chatFirebase_ = new Firebase(this.BASE_URL_ + 'chat');
     this.usersFirebase_ = new Firebase(this.BASE_URL_ + 'users');
   }
 
-  public connect(myName :string) {
-    this.myName_ = myName;
+  public connect(/*myName :string*/) {
+    // this.myName_ = myName;
     this.usersFirebase_.on('value', (snapshot) => {
       var onlineUsers = [];
       var offlineUsers = [];
@@ -42,15 +42,15 @@ class Chat {
       }
     });
 
-    var myRef = this.usersFirebase_.child(myName);
-    myRef.set(true);
-    myRef.onDisconnect().set(false);
+    // var myRef = this.usersFirebase_.child(myName);
+    // myRef.set(true);
+    // myRef.onDisconnect().set(false);
   }
 
-  public send = (message :string) => {
-    var messageObj = {userName: this.myName_, message: message};
-    this.chatFirebase_.push(messageObj);
-  }
+  // public send = (message :string) => {
+  //   var messageObj = {userName: this.myName_, message: message};
+  //   this.chatFirebase_.push(messageObj);
+  // }
 
   public onUsers(func :Function) {
     this.onUsersCallback_ = func;
@@ -64,18 +64,18 @@ class Chat {
 var mapUserToStatus = {};
 
 
-var myName;
-$('#chatScreen').hide();
-$('#loginButton').click(() => {
-  myName = $('#nameInput').val();
-  $('#loginScreen').hide();
-  $('#chatScreen').show();
-  login();
-});
+// var myName;
+// $('#chatScreen').hide();
+// $('#loginButton').click(() => {
+//   myName = $('#nameInput').val();
+//   $('#loginScreen').hide();
+//   $('#chatScreen').show();
+//   login();
+// });
 
 var chat = new Chat();
 var login = () => {
-  chat.connect(myName);
+  chat.connect(/*myName*/);
 
   chat.onUsers((onlineUsers :any, offlineUsers :any) => {
     var userList = $('#userList');
@@ -102,11 +102,12 @@ var login = () => {
     messagesDiv.scrollTop(messagesDiv[0].scrollHeight);  // scroll to bottom
   });
 }
+login();
 
 
-$('#messageSendButton').click(() => {
-  var message = $('#messageInput').val();
-  chat.send(message);
-  $('#messageInput').val('');  // clear input
-});
+// $('#messageSendButton').click(() => {
+//   var message = $('#messageInput').val();
+//   chat.send(message);
+//   $('#messageInput').val('');  // clear input
+// });
 
