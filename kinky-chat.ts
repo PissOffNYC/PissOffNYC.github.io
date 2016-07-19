@@ -1,6 +1,13 @@
 declare var Firebase :any;
 declare var $ :any;
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  console.log('mobile!!');
+  document.body.className = 'mobile';
+} else {
+  document.body.className = 'desktop';
+}
+
 class Chat {
   private BASE_URL_ = 'https://po-chat.firebaseio.com/';
   private chatFirebase_ :any;

@@ -9,6 +9,9 @@
       color: #00ff00;
       font-family: "Lucida Console";
     }
+    #chatScreen {
+      width: 100%;
+    }
     .wrapper {
       display: inline-block;
       vertical-align: top;
@@ -56,21 +59,17 @@
       height: 100%;
     }
 
-    @media only all and (max-width: 1081px) {
-      #userWrapper {
-        width: 80%;
-      }
-      #messageWrapper {
-        width: 80%;
-      }
+    .mobile #userWrapper {
+      width: 80%;
     }
-    @media only all and (min-width: 1082) {
-      #userWrapper {
-        width: 25%;
-      }
-      #messageWrapper {
-        width: 65%;
-      }
+    .mobile #messageWrapper {
+      width: 80%;
+    }
+    .desktop #userWrapper {
+      width: 25%;
+    }
+    .desktop #messageWrapper {
+      width: 60%;
     }
   </style>
 

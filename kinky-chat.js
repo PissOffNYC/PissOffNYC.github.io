@@ -1,3 +1,10 @@
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    console.log('mobile!!');
+    document.body.className = 'mobile';
+}
+else {
+    document.body.className = 'desktop';
+}
 var Chat = (function () {
     // private myName_;
     function Chat() {
