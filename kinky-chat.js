@@ -54,7 +54,7 @@ var mapUserToStatus = {};
 // var myName;
 // $('#chatScreen').hide();
 // $('#loginButton').click(() => {
-//   myName = $('#nameInput').val();
+//   // myName = $('#nameInput').val();
 //   $('#loginScreen').hide();
 //   $('#chatScreen').show();
 //   login();
